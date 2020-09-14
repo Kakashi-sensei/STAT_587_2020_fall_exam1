@@ -1,0 +1,20 @@
+---
+title: "exam1"
+author: "Tianqi(Tim)"
+date: "9/14/2020"
+output: html_document
+---
+
+```{r}
+library(psych)
+por1<- c(15, 18, 10, 12, 7, 13, 9)
+por2<- c(7, 19, 13, 16, 21, 10, 12, 15)
+describe(por1)
+describe(por2)
+t.test(por1,por2)
+rm(list=ls())
+
+
+```
+
+

@@ -1,0 +1,1 @@
+{"frames":[{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"rm((list))","line_number":0},{"character_number":0,"end_character_number":0,"end_line_number":0,"file":"","func":"stop(\"... must contain names or character strings\")","line_number":0}],"message":"Error in rm((list)) : ... must contain names or character strings\n"}
