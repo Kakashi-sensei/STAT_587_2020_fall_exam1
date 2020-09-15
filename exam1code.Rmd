@@ -36,7 +36,6 @@ t.test(rat$Trim, rat$Untrimmed,var.equal=FALSE,alternative = 'less')#unequal var
 t.test(rat$Trim, rat$Untrimmed,var.equal=TRUE,alternative = 'less')
 
 t.test(rat$Trim, rat$Untrimmed,var.equal=TRUE,conf.level=0.9, alternative = 'less')
-t.test(rat$Trim, rat$Untrimmed,var.equal=FALSE,conf.level=0.9, alternative = 'less')
 
 boxplot(value~TUT,data=ratmelt)#side-by-side boxplot
 
@@ -63,6 +62,34 @@ m <- sum(diff_random <= -47.9)
 
 n <- length(diff_random)
 (m+1)/(n+1)
+rm(list=ls())
+#Q3
+
+hayf <- read.table ("https://raw.githubusercontent.com/Kakashi-sensei/STAT_587_2020_fall_exam1/master/hayfever.txt", header= TRUE)
+
+boxplot(Score~Group,data=hayf)#side-by-side boxplot
+
+t.test(Score~Group,var.equal=TRUE,conf.level=0.9, alternative = 'two.sided', data=hayf)
+
+t.test(Score~Group,var.equal=TRUE,alternative = 'two.sided', data=hayf)
+
+t.test(Score~Group,var.equal=TRUE,conf.level=0.99, alternative = 'two.sided', data=hayf)
+
+qqPlot(Score~Group, main="qq plot", col="blue", col.lines="red", data=hayf)
+rm(list=ls())
+#Q4
+ptwork <- read.table ("https://raw.githubusercontent.com/Kakashi-sensei/STAT_587_2020_fall_exam1/master/pinetrees.txt", header= TRUE)
+
+boxplot(Diameter~Part,data=ptwork)#side-by-side boxplot
+
+qqPlot(ptwork$Diameter, main="qq plot", col="blue", col.lines="red")
+
+qqPlot(Diameter~Part, main="qq plot", col="blue", col.lines="red",data=ptwork)
+
+lnptwork <- transform(ptwork, ln=log(Diameter))
+
+t.test(ln~Part,var.equal=FALSE,alternative = 'greater', data=lnptwork)
+rm(list=ls())
 ```
 
 
